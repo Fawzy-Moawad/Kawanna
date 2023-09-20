@@ -1,0 +1,559 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/*-------------------------------------------
+            NAVBAR SECTION
+-------------------------------------------*/
+/* HEADER */
+
+header {
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-container {
+    width: 100%; /* Ensure the container takes up the full width */
+    backdrop-filter: blur(10px); /* Adjust the blur amount as needed */
+    background-color: rgba(13, 19, 33, 0.2); /* Adjust the background color and opacity as needed */
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    width: 100%; /* Added to take full width */
+}
+
+.left {
+    margin-right: auto;
+    text-decoration: none;
+    color: #697736;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding-left: 50px; /* Add padding to the left side */
+}
+
+/* Add space between Home and About links in the navigation bar */
+.left a + a {
+    margin-left: 20px; /* You can adjust the value to control the space */
+}
+
+.right {
+    margin-left: auto;
+    text-decoration: none;
+    color: #697736;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding-right: 50px; /* Add padding to the right side */
+}
+
+.logo {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 1.5em;
+}
+
+ul {
+    margin:0;
+    padding:0;
+    display:flex;
+}
+
+ul li {
+    list-style:none;
+    transition:0.5s;
+}
+
+ul li a {
+    display: block;
+    position:relative;
+    text-decoration:none;
+    padding:5px;
+    font-size:18px;
+    font-family: sans-serif;
+    text-transform:uppercase;
+    transition:0.5s;
+    color: gold
+}
+
+ul:hover li a {
+    transform:scale(1.5);
+    opacity:0.2;
+    filter:blur(5px);
+}
+
+ul li a:hover {
+    transform:scale(2);
+    opacity:1;
+    filter:blur(0);
+    text-decoration:none;
+    color: #F0EBD8;
+}
+
+ul li a:before {
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    transition:0.5s;
+    transform-origin:right;
+    transform:scaleX(0);
+    z-index:-1;
+}
+
+ul li a:hover:before {
+    transition:transform 0.5s;
+    transform-origin:left;
+    transform:scaleX(1);
+}
+
+/*------------------------------------------------
+                HOME SECTION
+------------------------------------------------*/
+#Home {
+    display: flex;
+    min-height: 100vh; /* Ensure a minimum height for the home section */
+    background-attachment: fixed;
+    z-index: 1; /* Place it above other sections */
+    position: relative; /* Add relative positioning */
+}
+
+/* video styles */
+.intro-video {
+    background-attachment: fixed;
+}
+
+video {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+}
+
+/* Modify the CSS for the h1 element */
+.header {
+    text-align: center; /* Center-align the text */
+    position: absolute; /* Position it absolutely */
+    top: 50%; /* Move it down 50% from the top */
+    left: 50%; /* Move it horizontally 50% from the left */
+    transform: translate(-50%, -50%); /* Center it perfectly */
+    z-index: 2; /* Ensure it's above the video */
+    color: #f0ebd8; /* Set the text color */
+    font-size: 2em; /* Adjust font size as needed */
+}
+
+/*-----------------------------------------------------
+            ABOUT SECTION
+------------------------------------------------------*/
+.gallery {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 16px;
+    perspective: 800px;
+}
+.card {
+    cursor: pointer;
+    position: relative;
+    transition: 1s ease-in-out;
+    transform-style: preserve-3d;
+    background-position: center;
+    background-size: cover;
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+    border-radius: 15px;
+    height: 400px;
+    width: 300px;
+    box-shadow: 0 0 10px rgb(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%; /* Make sure the image takes up the full width of the card */
+    height: 100%; /* Maintain the aspect ratio of the image */
+    object-fit: cover; /* Ensure the image covers the entire card */
+}
+
+
+.card:hover {
+    transform: rotateY(0.5turn);
+}
+
+.card_side {
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    width: 100%;
+    height: 100%;
+    transition: 1s ease-in-out;
+}
+
+.card_side--back {
+    transform: rotateY(0.5turn);
+}
+
+.card_side > img {
+    width: 120px;
+    height: 160px;
+    object-fit: cover;
+}
+/*-----------------------------------------------------
+            FOOTER SECTION
+------------------------------------------------------*/
+footer {
+    width: 100%;
+    padding: 100px 200px;
+}
+
+/*FOOTER NAV SECTION*/
+.footer-nav {
+    width: 100%; /* Added to take full width */
+    margin: auto; 
+    text-decoration: none;
+    color: #f0ebd8;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: medium;
+    align-items: center;
+}
+
+/*-------------------------------------
+            WORK SECTION
+-------------------------------------*/
+button {
+    border: o;
+    cursor: pointer;
+    position: relative;
+}
+button div {
+    background-color: rgb(15, 25, 35);
+    padding: 0.6rem 0.8rem;
+    position: relative;
+    overflow: hidden;
+}
+button a {
+    position: relative;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ece8e1;
+    text-transform: uppercase;
+    z-index: 2;
+}
+button::before,
+button::after {
+    content: "";
+    position: absolute;
+    width: 105%;
+    height: 30%;
+    background-color: transparent;
+    border: 1px solid rgb(134, 129, 124);
+    left: -2.5%;
+    z-index: -1;
+}
+button::before {
+    border-bottom: 0;
+    top: -10%;
+}
+button::after {
+    border-top: 0;
+    bottom: -10%;
+}
+button span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120%;
+    height: 110%;
+    background-color: #339393;
+    transform: translateX(-105%) skew(-10deg);
+    transition: 0.4s ease;
+}
+button:hover span {
+    transform: translateX(-5%) skew(-10deg);
+}
+
+/*          PREVIOUS PROJECTS SECTION       */
+
+
+/*-------------------------------------------------
+                    CONTACT ME SECTION
+--------------------------------------------------*/
+*, *:before, *:after {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body, button, input {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+}
+
+.background {
+    display: flex;
+    min-height: 100vh;
+}
+
+.container {
+    flex: 0 1 700px;
+    margin: auto;
+    padding: 10px;
+}
+
+.screen {
+    position: relative;
+    background: #333939;
+    border-radius: 15px;
+}
+
+.screen:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    right: 20px;
+    bottom: 0;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .4);
+    z-index: -1;
+}
+
+.screen-header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background: #6b7b7b;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.screen-header-left {
+    margin-right: auto;
+}
+
+.screen-header-button {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 3px;
+    border-radius: 8px;
+    background: white;
+}
+
+.screen-header-button.close {
+    background: #ed1c6f;
+}
+
+.screen-header-button.maximize {
+    background: #e8e925;
+}
+
+.screen-header-button.minimize {
+    background: #74c54f;
+}
+
+.screen-header-right {
+    display: flex;
+}
+
+.screen-header-ellipsis {
+    width: 3px;
+    height: 3px;
+    margin-left: 2px;
+    border-radius: 8px;
+    background: #999;
+}
+
+.screen-body {
+    display: flex;
+}
+
+.screen-body-item {
+    flex: 1;
+    padding: 50px;
+}
+
+.screen-body-item.left {
+    display: flex;
+    flex-direction: column;
+}
+
+.app-title {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    color: #819595;
+    font-size: 26px;
+}
+
+.app-contact {
+    margin-top: auto;
+    font-size: 10px;
+    color: #819595;
+}
+
+.app-form-group {
+    margin-bottom: 15px;
+}
+
+.app-form-group.message {
+    margin-top: 40px;
+}
+
+.app-form-group.buttons {
+    margin-bottom: 0;
+    text-align: right;
+}
+
+.app-form-control {
+    width: 100%;
+    padding: 10px 0;
+    background: none;
+    border: none;
+    border-bottom: 1px solid ;
+    color: #819595;
+    font-size: 14px;
+    text-transform: uppercase;
+    outline: none;
+    transition: border-color .2s;
+}
+
+.app-form-control::placeholder {
+    color: #fff8aa;;
+}
+
+.app-form-control:focus {
+    border-bottom-color: #ddd;
+}
+
+.app-form-button {
+    background: none;
+    border: none;
+    color: #339393;
+    font-size: 14px;
+    cursor: pointer;
+    outline: none;
+}
+
+.app-form-button:hover {
+    color: #819595;
+}
+
+.dribbble {
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+}
+
+@media screen and (max-width: 520px) {
+    .screen-body {
+    flex-direction: column;
+    }
+
+    .screen-body-item.left {
+    margin-bottom: 30px;
+    }
+
+    .app-title {
+    flex-direction: row;
+    }
+
+    .app-title span {
+    margin-right: 12px;
+    }
+
+    .app-title:after {
+    display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .screen-body {
+    padding: 40px;
+    }
+
+    .screen-body-item {
+    padding: 0;
+    }
+}
+
+.social-media-icons {
+    justify-content: center;
+    align-items: center;
+}
+
+/*------------------------------------------
+        OUTRO VIDEO SECTION
+------------------------------------------*/
+.outro-video {
+    position: relative;
+}
+
+.outro-video video {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+}
+
+.outro-video-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1; /* Ensure the text is above the video */
+}
+
+/*------------------------------------------
+        WORK & EXPERINCE SECTION
+------------------------------------------*/
+.icon-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.icon {
+    text-align: center;
+    margin: 10px; /* Adjust margin as needed */
+    flex-basis: calc(25% - 20px); /* Four icons per row, adjust margin accordingly */
+}
+
+.icon i {
+    font-size: 64px; /* Adjust the icon size as needed */
+    display: block;
+}
+
+.icon-text {
+    margin-top: 5px; /* Adjust the spacing between icon and text */
+}
+
+.btn {
+    display: inline-block;
+}
+
+
